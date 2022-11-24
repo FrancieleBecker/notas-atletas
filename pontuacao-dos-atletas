@@ -16,3 +16,15 @@ let atletas = [
    notas: [10, 10, 10, 9, 9.5]
  }
 ];
+
+function compare(a,b) {return a - b;};
+
+for (let i = 0; i < atletas.length; i++) {
+  let soma = 0;
+  atletas[i].notasComputadas = atletas[i].notas;
+  atletas[i].notasComputadas = atletas[i].notasComputadas.sort(compare).slice(1,4);
+  atletas[i].notasComputadas.map(function(notas) {
+    soma = soma + notas;
+  });
+  console.log("Atleta: " + atletas[i].nome + "\nNotas: " + atletas[i].notas + "\nMédia Válida: " + (soma / atletas[i].notasComputadas.length));
+};
